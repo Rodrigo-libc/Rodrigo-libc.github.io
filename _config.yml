@@ -6,6 +6,8 @@ baseurl: ""                             # Deixe vazio para site de usuário
 
 # Tema do Jekyll
 theme: minima                           # Tema padrão, leve e pronto para usar
+sass:
+  sass_dir: assets/css
 
 # Configurações de exibição
 paginate: 5                             # Número de posts por página (se tiver blog)
