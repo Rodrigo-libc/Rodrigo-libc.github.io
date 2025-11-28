@@ -120,11 +120,13 @@ Pronto! Agora você está conectado via SSH.
   position: absolute;
   top: 8px;
   right: 8px;
-  background: transparent; 
-  border: none;            
-  padding: 0;              
+  background: transparent;
+  border: none;
+  padding: 0;
   cursor: pointer;
   font-size: 1.1em;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 </style>
