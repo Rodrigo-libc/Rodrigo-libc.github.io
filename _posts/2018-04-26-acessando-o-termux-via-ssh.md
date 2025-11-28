@@ -16,7 +16,7 @@ Vocês vão precisar instalar o OpenSSH no Termux:
 
 <div class="code-block">
   <pre><code>apt install openssh -y</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">📋</button>
+  <i class="fa-thin fa-paste"></i>
 </div>
 
 ---
