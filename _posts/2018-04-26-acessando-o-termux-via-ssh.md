@@ -16,9 +16,8 @@ Vocês vão precisar instalar o OpenSSH no Termux:
 
 <div class="code-block">
   <pre><code>apt install openssh -y</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+    <button class="copy-btn" onclick="copyCode(this)">⎘</button>
+
 </div>
 
 ---
@@ -29,18 +28,14 @@ Para iniciar o servidor SSH, faça:
 
 <div class="code-block">
   <pre><code>sshd</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 O serviço agora está sendo iniciado na porta 8022. Você pode verificar os logs com:
 
 <div class="code-block">
   <pre><code>logcat -s 'syslog:*'</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 ---
@@ -52,9 +47,7 @@ Esse arquivo precisará ser criado e as permissões definidas para 600:
 
 <div class="code-block">
   <pre><code>touch ~/.ssh/authorized_keys</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 E para definir as permissões corretamente, faça:
@@ -62,9 +55,7 @@ E para definir as permissões corretamente, faça:
 <div class="code-block">
   <pre><code>chmod 600 ~/.ssh/authorized_keys
 chmod 700 ~/.ssh</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 ---
@@ -75,9 +66,7 @@ Agora, você pode gerar seu par de chaves com o seguinte comando:
 
 <div class="code-block">
   <pre><code>ssh-keygen</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 Você pode ou não inserir uma frase secreta. Se você não especificar, de qualquer forma, seu par de chaves será salvo em:
@@ -85,9 +74,7 @@ Você pode ou não inserir uma frase secreta. Se você não especificar, de qual
 <div class="code-block">
   <pre><code>~/.ssh/id_rsa
 ~/.ssh/id_rsa.pub</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 ---
@@ -98,9 +85,7 @@ Agora podemos adicioná-la ao `~/.ssh/authorized_keys`. Faça:
 
 <div class="code-block">
   <pre><code>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 Cuidado para não errar.  
@@ -108,9 +93,7 @@ Em seguida, defina as permissões:
 
 <div class="code-block">
   <pre><code>chmod 600 ~/.ssh/authorized_keys</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 ---
@@ -121,9 +104,7 @@ Precisamos agora enviar nossa chave pública para o cartão `/sdcard`. Para isso
 
 <div class="code-block">
   <pre><code>cp ~/.ssh/id_rsa /sdcard</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">
-    <i class="fas fa-paste"></i>
-  </button>
+  <button class="copy-btn" onclick="copyCode(this)">⎘</button>
 </div>
 
 ---
