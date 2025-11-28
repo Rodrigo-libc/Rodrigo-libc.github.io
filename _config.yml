@@ -3,15 +3,12 @@ description: Bem-vindo ao meu site pessoal!
 url: "https://rodrigo-libc.github.io"
 baseurl: ""
 
-# Tema oficial (ex.: minima, midnight, slate)
-theme: jekyll-theme-midnight
+theme: jekyll-theme-primer
 
-# Paginação
 paginate: 5
 plugins:
   - jekyll-paginate
 
-# Markdown
 markdown: kramdown
 kramdown:
   input: GFM
