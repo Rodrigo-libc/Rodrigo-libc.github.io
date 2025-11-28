@@ -1,0 +1,18 @@
+---
+---
+
+@import "minima";
+
+body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+a {
+  color: #00aaff !important;
+}
+
+.post-title,
+.site-title {
+  color: #fff !important;
+}
