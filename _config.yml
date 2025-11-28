@@ -1,15 +1,15 @@
-# Configurações básicas do site
 title: Meu Site
 description: Bem-vindo ao meu site pessoal!
 url: "https://rodrigo-libc.github.io"
 baseurl: ""
 
-# Tema oficial do GitHub Pages
+# Tema oficial (ex.: minima, midnight, slate)
 theme: jekyll-theme-midnight
 
-# Configurações de blog
+# Paginação
 paginate: 5
-show_posts: true
+plugins:
+  - jekyll-paginate
 
 # Markdown
 markdown: kramdown
