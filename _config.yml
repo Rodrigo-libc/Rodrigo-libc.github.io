@@ -5,7 +5,7 @@ url: "https://rodrigo-libc.github.io"  # URL do site
 baseurl: ""                             # Deixe vazio para site de usuário
 
 # Tema do Jekyll
-remote_theme: sharadcodes/jekyll-theme-dark-reader
+remote_theme: pages-themes/midnight@v0.2.0
 plugins:
   - jekyll-remote-theme
 
