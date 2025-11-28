@@ -10,7 +10,7 @@ paginate: 5
 <p>Ainda não há posts publicados.</p>
 {% else %}
 
-<ul>
+<ul style="list-style:none; padding-left:0;">
   {% for post in paginator.posts %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a> - {{ post.date | date: "%d/%m/%Y" }}
