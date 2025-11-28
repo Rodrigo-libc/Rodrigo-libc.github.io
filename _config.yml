@@ -1,3 +1,13 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+# Configurações básicas do site
+title: Meu Site
+description: Bem-vindo ao meu site pessoal!
+url: "https://rodrigo-libc.github.io"  # URL do site
+baseurl: ""                             # Deixe vazio para site de usuário
+
+# Tema do Jekyll
+theme: minima                           # Tema padrão, leve e pronto para usar
+
+# Configurações de exibição
+paginate: 5                             # Número de posts por página (se tiver blog)
+show_posts: true                        # Exibir posts no index
+
