@@ -11,9 +11,10 @@ Primeiro de tudo é importante que você tenha conhecimento com sistemas GNU/Lin
 
 Vocês vão precisar instalar o OpenSSH no Termux:
 
-```bash
-apt install openssh -y
-```
+<div class="code-block">
+  <pre><code id="cmd1">apt install openssh -y</code></pre>
+  <button onclick="copyCommand('cmd1')">Copiar</button>
+</div>
 Para iniciar o servidor SSH faça:
 
 ```bash
