@@ -4,11 +4,8 @@ description: Bem-vindo ao meu site pessoal!
 url: "https://rodrigo-libc.github.io"
 baseurl: ""
 
-# Tema escuro remoto
-remote_theme: sharadcodes/jekyll-theme-dark-reader
-plugins:
-  - jekyll-remote-theme
-  - jekyll-paginate
+# Tema oficial do GitHub Pages
+theme: jekyll-theme-midnight
 
 # Configurações de blog
 paginate: 5
