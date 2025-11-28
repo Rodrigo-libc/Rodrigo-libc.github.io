@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+
+  <!-- CSS externo para botões de copiar -->
+  <link rel="stylesheet" href="/assets/css/copy.css">
+
+  <!-- CSS padrão do tema -->
+  {{ site.styles }}
+</head>
+<body>
+
+  <!-- Conteúdo do post -->
+  {{ content }}
+
+  <!-- JS externo para copiar -->
+  <script src="/assets/js/copy.js"></script>
+
+  <!-- JS padrão do tema -->
+  {{ site.scripts }}
+</body>
+</html>
