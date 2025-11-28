@@ -6,10 +6,6 @@ paginate: 5
 
 # Meu Blog
 
-{% if site.posts == empty %}
-<p>Ainda não há posts publicados.</p>
-{% else %}
-
 <ul>
   {% for post in paginator.posts %}
     <li>
@@ -28,5 +24,3 @@ paginate: 5
     <a href="{{ paginator.next_page_path | relative_url }}">Próxima →</a>
   {% endif %}
 </div>
-
-{% endif %}
