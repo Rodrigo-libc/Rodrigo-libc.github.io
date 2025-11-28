@@ -11,48 +11,50 @@ Primeiro de tudo é importante que você tenha conhecimento com sistemas GNU/Lin
 
 Vocês vão precisar instalar o OpenSSH no Termux:
 
-<div class="code-wrapper">
-  <pre><code id="cmd1">apt install openssh -y</code></pre>
-  <button class="copy-btn" onclick="copyCode('cmd1')">
-    📋 Copiar código
-  </button>
+<!-- Bloco de código estilizado com botão de copiar -->
+<div class="code-block">
+  <pre><code>apt install openssh -y</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
 </div>
 
 <style>
-.code-wrapper {
+.code-block {
   position: relative;
-  background: #1e1e1e; /* fundo escuro */
-  color: #f5f5f5; /* texto claro */
-  padding: 1em;
-  border-radius: 6px;
-  margin-bottom: 1em;
+  background-color: #f5f5f5; /* fundo claro */
+  border-radius: 8px;
+  padding: 12px;
   font-family: monospace;
+  margin-bottom: 16px;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #333; /* texto escuro */
 }
 
 .copy-btn {
   position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  background: #007bff;
-  color: #fff;
+  top: 8px;
+  right: 8px;
+  background: #e0e0e0;
   border: none;
   border-radius: 4px;
-  padding: 0.2em 0.5em;
+  padding: 4px 8px;
   cursor: pointer;
   font-size: 0.9em;
 }
 
 .copy-btn:hover {
-  background: #0056b3;
+  background: #d0d0d0;
 }
 </style>
 
 <script>
-function copyCode(id) {
-  const code = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(code).then(() => {
-    alert('Comando copiado!');
-  });
+function copyCode(button) {
+  const code = button.previousElementSibling.innerText;
+  navigator.clipboard.writeText(code).catch(err => console.error(err));
 }
 </script>
 
