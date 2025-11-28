@@ -1,20 +1,20 @@
 # Configurações básicas do site
 title: Meu Site
 description: Bem-vindo ao meu site pessoal!
-url: "https://rodrigo-libc.github.io"  # URL do site
-baseurl: ""                             # Deixe vazio para site de usuário
+url: "https://rodrigo-libc.github.io"
+baseurl: ""
 
-# Tema do Jekyll
-remote_theme: pages-themes/midnight@v0.2.0
+# Tema escuro remoto
+remote_theme: sharadcodes/jekyll-theme-dark-reader
 plugins:
   - jekyll-remote-theme
-  jekyll-paginate
+  - jekyll-paginate
 
-# Configurações de exibição
-paginate: 5                             # Número de posts por página (se tiver blog)
-show_posts: true                        # Exibir posts no index
+# Configurações de blog
+paginate: 5
+show_posts: true
 
-# Opções adicionais (compatíveis com Dark Reader)
+# Markdown
 markdown: kramdown
 kramdown:
   input: GFM
