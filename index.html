@@ -4,13 +4,16 @@ title: Blog
 paginate: 5
 ---
 
-# Meu Blog
+<h1>Meu Blog</h1>
+
+{% if site.posts == empty %}
+<p>Ainda não há posts publicados.</p>
+{% else %}
 
 <ul>
   {% for post in paginator.posts %}
     <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span> - {{ post.date | date: "%d/%m/%Y" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a> - {{ post.date | date: "%d/%m/%Y" }}
     </li>
   {% endfor %}
 </ul>
@@ -24,3 +27,6 @@ paginate: 5
     <a href="{{ paginator.next_page_path | relative_url }}">Próxima →</a>
   {% endif %}
 </div>
+
+{% endif %}
+
