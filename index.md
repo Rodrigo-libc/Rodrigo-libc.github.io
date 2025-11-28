@@ -1,15 +1,15 @@
 ---
-layout: home
-title: Bem-vindo
+layout: default
+title: Blog
+paginate: 5
 ---
 
-# Olá! 👋
+# Meu Blog
 
-Este é meu site usando **Jekyll + Markdown**.
+<ul>
+  {% for post in site.posts %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%d/%m/%Y" }}</li>
+  {% endfor %}
+</ul>
 
-Você pode editar este arquivo em `index.md` para mudar o conteúdo da homepage.
-
-- Lista de exemplos
-- Links
-- Textos em **Markdown**
 
