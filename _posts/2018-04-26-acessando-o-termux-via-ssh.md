@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layout: post-copy
 title: "Acessando o Termux via SSH pelo PuTTY"
 date: 2018-04-26
 categories: termux, ssh
