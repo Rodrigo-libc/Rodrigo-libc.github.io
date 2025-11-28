@@ -141,13 +141,6 @@ Agora você deve estar conectado ao seu dispositivo Android via SSH. Abraço.
   overflow-x: auto;
 }
 
-.code-block pre {
-  margin: 0;
-  white-space: pre-wrap;
-  word-break: break-word;
-  color: #333;
-}
-
 .copy-btn {
   position: absolute;
   top: 8px;
@@ -155,20 +148,18 @@ Agora você deve estar conectado ao seu dispositivo Android via SSH. Abraço.
   background: #e0e0e0;
   border: none;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 6px;
   cursor: pointer;
-  font-size: 0.9em;
-  transition: background 0.2s;
+  font-size: 1.1em;
+  opacity: 0;            /* inicialmente invisível */
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.code-block:hover .copy-btn {
+  opacity: 1;             /* aparece ao passar o mouse */
 }
 
 .copy-btn:hover {
   background: #d0d0d0;
-}
-</style>
-
-<script>
-function copyCode(button) {
-  const code = button.previousElementSibling.innerText;
-  navigator.clipboard.writeText(code).catch(err => console.error(err));
 }
 </script>
