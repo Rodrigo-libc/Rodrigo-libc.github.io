@@ -4,21 +4,23 @@
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
 
-  <!-- CSS externo para botões de copiar -->
-  <link rel="stylesheet" href="/assets/css/copy.css">
-
-  <!-- CSS padrão do tema -->
+  <!-- CSS do tema -->
   {{ site.styles }}
+
+  <!-- CSS do botão copiar -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/copy.css">
 </head>
 <body>
 
-  <h1>{{ page.title }}</h1> <!-- título do post -->
-  {{ content }}             <!-- conteúdo do Markdown -->
+  <main class="post-content">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+  </main>
 
-  <!-- JS externo para copiar -->
-  <script src="/assets/js/copy.js"></script>
+  <!-- JS do botão copiar -->
+  <script src="{{ site.baseurl }}/assets/js/copy.js"></script>
 
-  <!-- JS padrão do tema -->
+  <!-- JS do tema -->
   {{ site.scripts }}
 </body>
 </html>
