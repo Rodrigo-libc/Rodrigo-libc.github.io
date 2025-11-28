@@ -3,8 +3,11 @@
 
 @import "minima";
 
-body {
-  background: #000 !important;
+body, 
+html,
+.page, 
+.site {
+  background-color: #000 !important;
   color: #fff !important;
 }
 
@@ -12,7 +15,15 @@ a {
   color: #00aaff !important;
 }
 
+header, 
+footer, 
+.navbar, 
+.post {
+  background-color: #000 !important;
+}
+
 .post-title,
-.site-title {
+.site-title,
+.page-title {
   color: #fff !important;
 }
