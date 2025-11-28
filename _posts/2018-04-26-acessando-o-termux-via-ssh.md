@@ -120,13 +120,13 @@ Pronto! Agora você está conectado via SSH.
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #e0e0e0;
-  border: none;
-  border-radius: 4px;
-  padding: 6px;
+  background: transparent; 
+  border: none;            
+  padding: 0;              
   cursor: pointer;
   font-size: 1.1em;
 }
+
 </style>
 
 <script>
