@@ -1,5 +1,8 @@
 ---
 layout: post
+title: "Acessando o Termux via SSH pelo PuTTY"
+date: 2018-04-26
+categories: termux, ssh
 ---
 
 Olá, como pediram, vou mostrar como acessar o **Termux** via SSH pelo **PuTTY**, então vamos lá!
