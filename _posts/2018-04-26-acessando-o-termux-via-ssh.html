@@ -1,66 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acessando o Termux via SSH pelo PuTTY</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #ffffff; /* fundo da página */
-    color: #222222; /* texto principal */
-    margin: 0;
-    padding: 20px;
-  }
+---
+layout: post
+title: "Acessando o Termux via SSH pelo PuTTY"
+date: 2018-04-26
+categories: termux, ssh
+---
 
-  h1, h2, h3 {
-    color: #111111;
-  }
-
-  p {
-    margin-bottom: 16px;
-  }
-
-  .code-block {
-    position: relative;
-    background-color: #f5f5f5; /* fundo do bloco de código */
-    border-radius: 8px;
-    padding: 12px;
-    font-family: monospace;
-    margin-bottom: 16px;
-    overflow-x: auto;
-  }
-
-  .code-block pre {
-    margin: 0;
-    white-space: pre-wrap;
-    word-break: break-word;
-    color: #333333; /* texto do código */
-  }
-
-  .copy-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: #e0e0e0;
-    border: none;
-    border-radius: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background 0.2s;
-  }
-
-  .copy-btn:hover {
-    background: #d0d0d0;
-  }
-</style>
-</head>
-<body>
-
-<h1>Acessando o Termux via SSH pelo PuTTY</h1>
-<p>Olá, como pediram, segue o passo a passo:</p>
+Olá, como pediram, segue o passo a passo:
 
 <div class="code-block">
   <pre><code>pkg update && pkg upgrade</code></pre>
@@ -77,12 +22,45 @@
   <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
 </div>
 
+<style>
+.code-block {
+  position: relative;
+  background-color: #f5f5f5; /* fundo claro */
+  border-radius: 8px;
+  padding: 12px;
+  font-family: monospace;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #333; /* texto escuro */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: #d0d0d0;
+}
+</style>
+
 <script>
 function copyCode(button) {
   const code = button.previousElementSibling.innerText;
   navigator.clipboard.writeText(code).catch(err => console.error(err));
 }
 </script>
-
-</body>
-</html>
