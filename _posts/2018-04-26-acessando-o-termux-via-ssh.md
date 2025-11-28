@@ -11,10 +11,51 @@ Primeiro de tudo é importante que você tenha conhecimento com sistemas GNU/Lin
 
 Vocês vão precisar instalar o OpenSSH no Termux:
 
-<div class="code-block">
+<div class="code-wrapper">
   <pre><code id="cmd1">apt install openssh -y</code></pre>
-  <button onclick="copyCommand('cmd1')">Copiar</button>
+  <button class="copy-btn" onclick="copyCode('cmd1')">
+    📋 Copiar código
+  </button>
 </div>
+
+<style>
+.code-wrapper {
+  position: relative;
+  background: #1e1e1e; /* fundo escuro */
+  color: #f5f5f5; /* texto claro */
+  padding: 1em;
+  border-radius: 6px;
+  margin-bottom: 1em;
+  font-family: monospace;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.copy-btn:hover {
+  background: #0056b3;
+}
+</style>
+
+<script>
+function copyCode(id) {
+  const code = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    alert('Comando copiado!');
+  });
+}
+</script>
+
 Para iniciar o servidor SSH faça:
 
 ```bash
