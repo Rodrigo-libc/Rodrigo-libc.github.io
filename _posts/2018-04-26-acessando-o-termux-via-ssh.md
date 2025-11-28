@@ -5,65 +5,94 @@ date: 2018-04-26
 categories: termux, ssh
 ---
 
-Olá, como pediram, aqui vai o passo a passo para acessar o Termux via SSH usando o PuTTY:
-
----
-
-### Atualizando o Termux
-
-Primeiro, atualize os pacotes do Termux para garantir que tudo esteja atualizado:
+Olá! Como pediram, vou mostrar como acessar o Termux via SSH pelo PuTTY. Então, vamos lá!  
+Primeiro de tudo, é importante que você tenha conhecimento em sistemas GNU/Linux e redes.  
+Vocês vão precisar instalar o OpenSSH no Termux:
 
 <div class="code-block">
-  <pre><code>pkg update && pkg upgrade</code></pre>
+  <pre><code>apt install openssh -y</code></pre>
   <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
 </div>
 
----
-
-### Instalando o OpenSSH
-
-Depois, instale o OpenSSH, que permite o acesso remoto:
-
-<div class="code-block">
-  <pre><code>pkg install openssh</code></pre>
-  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
-</div>
-
----
-
-### Iniciando o servidor SSH
-
-Agora, inicie o servidor SSH:
+Para iniciar o servidor SSH, faça:
 
 <div class="code-block">
   <pre><code>sshd</code></pre>
   <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
 </div>
 
----
-
-### Obtendo o IP do Termux
-
-Para conectar via PuTTY, você precisa do IP do seu dispositivo:
+O serviço agora está sendo iniciado na porta 8022. Você pode fazer:
 
 <div class="code-block">
-  <pre><code>ifconfig</code></pre>
+  <pre><code>logcat -s 'syslog:*'</code></pre>
   <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
 </div>
 
-Procure pelo IP na interface `wlan0`, geralmente algo como `192.168.x.x`.
+Agora, você precisa colocar sua chave pública OpenSSH no arquivo `~/.ssh/authorized_keys`.  
+Esse arquivo precisará ser criado e as permissões definidas para 600. Faça:
 
----
+<div class="code-block">
+  <pre><code>touch ~/.ssh/authorized_keys</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
 
-### Conectando com PuTTY
+E para as permissões, faça:
 
-Abra o PuTTY no computador e conecte-se usando:  
+<div class="code-block">
+  <pre><code>chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
 
-- **Host Name (or IP address):** `<seu-ip-aqui>`  
-- **Port:** `8022` (porta padrão do Termux SSH)  
-- **Connection type:** SSH  
+Agora, você pode gerar seu par de chaves com o seguinte comando: 
 
-Depois clique em **Open** e faça login com seu usuário do Termux (`u0_aXXX`) e a senha que você configurou.
+<div class="code-block">
+  <pre><code>ssh-keygen</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
+
+Você pode ou não inserir uma frase secreta. Se você não especificar, de qualquer forma, seu par de chaves será salvo em:
+
+<div class="code-block">
+  <pre><code>~/.ssh/id_rsa
+~/.ssh/id_rsa.pub</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
+
+Então, agora podemos adicioná-lo ao `~/.ssh/authorized_keys`. Faça:
+
+<div class="code-block">
+  <pre><code>cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
+
+Cuidado para não errar.  
+Agora, precisamos definir as permissões. Faça:
+
+<div class="code-block">
+  <pre><code>chmod 600 ~/.ssh/authorized_keys</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
+
+Se você fez tudo certo, será um sucesso!  
+Precisamos agora enviar nossa chave pública para o cartão `/sdcard`. Para isso, é simples, faça:
+
+<div class="code-block">
+  <pre><code>cp ~/.ssh/id_rsa /sdcard</code></pre>
+  <button class="copy-btn" onclick="copyCode(this)">📋 Copiar</button>
+</div>
+
+Agora, vocês precisam enviar sua chave para o Windows. A forma de fazer isso você escolhe; pode ser por USB, FTP, etc.  
+Vocês precisam instalar o PuTTY no Windows. Deixarei o link abaixo.  
+Feita a instalação, abram o PuTTYgen (prestem bastante atenção aqui).  
+
+No PuTTY, você precisará convertê-la primeiro para o formato de chave privada do PuTTY.  
+Carregue a chave privada (`id_rsa`) e salve a chave privada como um arquivo `.ppk`.  
+
+Execute o PuTTY, digite o endereço IP do seu dispositivo Android e use a porta 8022.  
+Em **Conexão > SSH > Auth**, você pode procurar o arquivo `.ppk`. Clique em abrir.  
+
+Você pode deixar "login como:" em branco. Pronto! Agora você deve estar conectado ao seu dispositivo Android via SSH. Abraço.
 
 ---
 
